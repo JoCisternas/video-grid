@@ -1,7 +1,10 @@
 const AddVideo = document.getElementById('AddVideo');
-const main = document.getElementById('main');
+var main = document.getElementById('main');
 
 window.addVideo = () => {
+// <div id="main" class="main-container p-0 m-0"></div>
+  const col = document.createElement('div');
+  col.className = 'col-lg-6 col-md-6 col-sm-6 col-xs-12 p-0 m-0'
 
   const wrapper = document.createElement('div');
   const videoTag = document.createElement('video');
@@ -15,7 +18,9 @@ window.addVideo = () => {
   videoTag.muted = true;
 
   wrapper.appendChild(videoTag);
-  main.appendChild(wrapper);
+  col.appendChild(wrapper);
+
+  main.appendChild(col);
 }
 
 AddVideo.addEventListener('click', window.addVideo, false);
